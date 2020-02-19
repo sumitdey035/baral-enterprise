@@ -1,5 +1,6 @@
 <tr>
   <td><%= service_request.call_id %></td>
+  <td><%= link_to service_request.customer.name, service_request.customer %></td>
   <td><%= service_request.problem %></td>
   <td><%= service_request.status %></td>
   <td><%= service_request.customer_remark %></td>

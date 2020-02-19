@@ -11,27 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :street %>
-    <%= form.text_area :street %>
+  <div class="row">
+    <div class="col-7">
+      <div class="form-group">
+        <%= form.label :street %>
+        <%= form.text_area :street, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :landmark %>
+        <%= form.text_area :landmark, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="form-group">
+        <%= form.label :location %>
+        <%= form.text_field :location, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :pincode %>
+        <%= form.text_field :pincode, class: 'form-control', required: true %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
 
-  <div class="field">
-    <%= form.label :landmark %>
-    <%= form.text_area :landmark %>
-  </div>
 
-  <div class="field">
-    <%= form.label :pincode %>
-    <%= form.text_field :pincode %>
-  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to 'Back', @address.customer, class: 'btn btn-light' %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

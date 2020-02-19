@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :primary_phone_no %>
-    <%= form.text_field :primary_phone_no %>
+    <%= form.text_field :primary_phone_no, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :secondary_phone_no %>
-    <%= form.text_field :secondary_phone_no %>
+    <%= form.text_field :secondary_phone_no, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= link_to 'Back', @customer, class: 'btn btn-light' %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,0 +1,17 @@
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+  <div class="sb-sidenav-menu">
+    <div class="nav">
+      <%= link_to root_path, class: 'nav-link active' do %>
+        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Dashboard
+      <% end %>
+
+      <%= link_to customers_path, class: 'nav-link' do %>
+        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Customers
+      <% end %>
+    </div>
+  </div>
+  <div class="sb-sidenav-footer">
+    <div class="small">Logged in as:</div>
+    Baral Enterprise
+  </div>
+</nav>
