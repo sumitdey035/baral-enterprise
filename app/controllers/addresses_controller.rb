@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_customer
-  before_action :set_address, only: [:edit, :update, :destroy]
+  before_action :set_address, only: [:edit, :update]
 
   def new
     @address = @customer.addresses.new
@@ -23,11 +23,6 @@ class AddressesController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @address.destroy
-    redirect_to @customer, notice: 'Address was successfully destroyed.'
   end
 
   private

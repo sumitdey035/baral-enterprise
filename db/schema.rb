@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_100344) do
+ActiveRecord::Schema.define(version: 2020_02_19_104217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 2020_02_19_100344) do
     t.string "secondary_phone_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "service_requests", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "address_id"
+    t.string "call_id"
+    t.text "problem"
+    t.integer "status", default: 0
+    t.text "customer_remark"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_id"], name: "index_service_requests_on_address_id"
+    t.index ["customer_id"], name: "index_service_requests_on_customer_id"
   end
 
 end

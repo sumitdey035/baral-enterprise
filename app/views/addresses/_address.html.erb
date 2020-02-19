@@ -3,6 +3,5 @@
   <td><%= address.location %></td>
   <td><%= address.landmark %></td>
   <td><%= address.pincode %></td>
-  <td><%= link_to 'Edit', edit_customer_address_path(@customer) %></td>
-  <td><%= link_to 'Destroy', [@customer, address], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Edit', edit_customer_address_path(address.customer, address) %></td>
 </tr>
