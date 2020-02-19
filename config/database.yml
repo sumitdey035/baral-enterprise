@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: 'localhost'
+  username: 'baral_db'
+  password: 'baral_db'
+  database: baral_development_db
