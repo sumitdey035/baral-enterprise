@@ -1,6 +1,6 @@
 class ServiceRequestsController < ApplicationController
   before_action :set_customer
-  before_action :set_service_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_service_request, only: %i[show edit update]
 
   def index
     @service_requests = ServiceRequest.all
@@ -32,15 +32,16 @@ class ServiceRequestsController < ApplicationController
   end
 
   private
-    def set_service_request
-      @service_request = @customer.service_requests.find(params[:id])
-    end
+
+  def set_service_request
+    @service_request = @customer.service_requests.find(params[:id])
+  end
 
   def set_customer
     @customer = Customer.find(params[:customer_id])
   end
 
-    def service_request_params
-      params.require(:service_request).permit(:address_id, :problem, :status, :customer_remark)
-    end
+  def service_request_params
+    params.require(:service_request).permit(:address_id, :problem, :status, :customer_remark)
+  end
 end

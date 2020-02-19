@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_customer
-  before_action :set_address, only: [:edit, :update]
+  before_action :set_address, only: %i[edit update]
 
   def new
     @address = @customer.addresses.new
@@ -26,15 +26,16 @@ class AddressesController < ApplicationController
   end
 
   private
-    def set_address
-      @address = @customer.addresses.find(params[:id])
-    end
+
+  def set_address
+    @address = @customer.addresses.find(params[:id])
+  end
 
   def set_customer
     @customer = Customer.find(params[:customer_id])
   end
 
-    def address_params
-      params.require(:address).permit(:street, :location, :landmark, :pincode)
-    end
+  def address_params
+    params.require(:address).permit(:street, :location, :landmark, :pincode)
+  end
 end
