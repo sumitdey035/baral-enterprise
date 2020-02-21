@@ -21,10 +21,7 @@ development:
 production:
   <<: *default
   database: 'baral-production-db'
-#  username: 'postgres'
-#  password: 'XN8StUq3AeKLUVdLQG5L'
-#  host: '13.127.91.212'
-  host: 'localhost'
-  username: 'baral_db'
-  password: 'baral_db'
+  username: 'baral'
+  password: 'baral'
+  host: '13.127.91.212'
   port: 5432
