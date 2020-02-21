@@ -2,7 +2,7 @@
 lock '~> 3.12.0'
 
 # server '172-31-39-160', port: 22, roles: [:web, :app, :db], primary: true
-server '13.127.91.212', port: 22, roles: [:web, :app, :db], primary: true
+server '13.127.91.212', port: 22, roles: %i[web app db], primary: true
 
 set :application, 'baral-enterprise'
 set :repo_url, 'git@github.com:sumitdey035/baral-enterprise.git'
@@ -17,7 +17,7 @@ set :stage, :production
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
-# set :rvm_map_bins, %w{gem rake ruby rails bundle}
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/Downloads/baral_enterprise.pem) }
 
 # Default branch is :master
