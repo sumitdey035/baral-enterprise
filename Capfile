@@ -11,11 +11,12 @@ require 'Capistrano/deploy'
 require 'Capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rbenv'
-require 'capistrano/passenger'
+# require 'capistrano/passenger'
 # require 'whenever/Capistrano'
 # require 'capistrano/chruby'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require 'capistrano/puma'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
