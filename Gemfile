@@ -26,7 +26,7 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma', require: false
-  # gem "capistrano-db-tasks", '0.5', require: false
+  gem "capistrano-db-tasks", '0.5', require: false
   # gem 'capistrano-passenger', require: false
 end
 
