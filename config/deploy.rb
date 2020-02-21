@@ -17,6 +17,7 @@ set :stage, :production
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/Downloads/baral_enterprise.pem) }
 
 # Default branch is :master
