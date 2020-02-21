@@ -15,5 +15,5 @@ production:
   database: 'baral-production-db'
   username: 'baral'
   password: 'baral'
-  host: '13.127.91.212'
+  host: 'localhost'
   port: 5432
