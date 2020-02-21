@@ -11,8 +11,8 @@ require 'capistrano/rbenv'
 # require 'capistrano/passenger'
 # require 'whenever/Capistrano'
 # require 'capistrano/chruby'
-# require 'capistrano/rails/assets'
-# require 'capistrano/rails/migrations'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx

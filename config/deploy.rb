@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.12.0"
+lock '~> 3.12.0'
 
 # server '172-31-39-160', port: 22, roles: [:web, :app, :db], primary: true
 server '13.127.91.212', port: 22, roles: [:web, :app, :db], primary: true
@@ -69,19 +69,19 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 
-namespace :deploy do
-
-  desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      before 'deploy: restart'
-      invoke 'deploy'
-    end
-  end
-
-  # set :linked_files, %w{config/database.yml}
-
-  after :finishing, :compile_assets
-  after :finishing, :cleanup
-  after :finishing, :restart
-end
+# namespace :deploy do
+#
+#   desc 'Initial Deploy'
+#   task :initial do
+#     on roles(:app) do
+#       before 'deploy: restart'
+#       invoke 'deploy'
+#     end
+#   end
+#
+#   # set :linked_files, %w{config/database.yml}
+#
+#   after :finishing, :compile_assets
+#   after :finishing, :cleanup
+#   after :finishing, :restart
+# end
