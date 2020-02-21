@@ -7,7 +7,7 @@ server '13.127.91.212', port: 22, roles: [:web, :app, :db], primary: true
 set :application, 'baral-enterprise'
 set :repo_url, 'git@github.com:sumitdey035/baral-enterprise.git'
 set :user, 'ubuntu' #server user
-set :rbenv_ruby, '2.5.3'
+# set :rbenv_ruby, '2.5.3'
 
 # Don't change these unless you know what you're doing
 set :pty, true
