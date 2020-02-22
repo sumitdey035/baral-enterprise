@@ -12,8 +12,15 @@ development:
 
 production:
   <<: *default
-  database: 'baral-production-db'
-  username: 'baral'
-  password: 'baral'
   host: 'localhost'
-  port: 5432
+  username: 'baral_db'
+  password: 'baral_db'
+  database: baral_development_db
+
+#production:
+#  <<: *default
+#  database: 'baral-production-db'
+#  username: 'baral'
+#  password: 'baral'
+#  host: 'localhost'
+#  port: 5432
