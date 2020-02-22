@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :dashboard, only: :index
   resources :customers, except: :destroy do
     resources :addresses, except: %i[index show destroy]
