@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -7,7 +9,8 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module BaralApp
-  class Application < Rails::Application
+  class
+  Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
@@ -16,5 +19,7 @@ module BaralApp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.time_zone = 'Kolkata'
+
+    config.autoload_paths += %W[#{config.root}/app/services]
   end
 end

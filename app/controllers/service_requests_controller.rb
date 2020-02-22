@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ServiceRequestsController < ApplicationController
   before_action :set_customer
   before_action :set_service_request, only: %i[show edit update]
@@ -46,7 +48,7 @@ class ServiceRequestsController < ApplicationController
 
   def service_request_params
     params.require(:service_request).permit(:address_id, :problem, :status, :customer_remark,
-                                            product_detail_attributes: [:category, :sub_category, :quantity, :purchased_from, :bill_no,
-                                                             :bill_date, :warranty, :modelcode, :modelname, :serial_no])
+                                            product_detail_attributes: %i[category sub_category quantity purchased_from bill_no
+                                                                          bill_date warranty modelcode modelname serial_no])
   end
 end

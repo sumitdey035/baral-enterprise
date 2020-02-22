@@ -13,12 +13,6 @@
 
   <div class="row">
     <div class="col-md-6">
-      <%= form.fields_for :product_detail, service_request.product_detail do |f| %>
-        <%= render partial: 'product_details/fields', locals: { f: f } %>
-      <% end %>
-    </div>
-
-    <div class="col-md-6">
       <div class="form-group">
         <%= form.label :status %>
         <%= form.select :status, options_for_select(ServiceRequest.statuses.map {|k, v| [k.humanize.capitalize, k]}), {}, { class: 'form-control' } %>
@@ -26,9 +20,9 @@
 
       <div class="form-group">
         <ul class="list-group">
-          <li class="list-group-item disabled" aria-disabled="true">
+          <li class="list-group-item">
             Select Address
-            <%= link_to 'New Address', new_customer_address_path(@customer) %>
+            <%= link_to 'New Address', new_customer_address_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
           </li>
           <% @customer.addresses.each do |address| %>
             <li class="list-group-item">
@@ -52,6 +46,12 @@
         <%= form.label :customer_remark %>
         <%= form.text_area :customer_remark, class: 'form-control' %>
       </div>
+    </div>
+
+    <div class="col-md-6">
+      <%= form.fields_for :product_detail, service_request.product_detail do |f| %>
+        <%= render partial: 'product_details/fields', locals: { f: f } %>
+      <% end %>
     </div>
   </div>
 
