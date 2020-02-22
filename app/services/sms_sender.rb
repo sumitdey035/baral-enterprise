@@ -3,7 +3,7 @@
 class SmsSender
   API_KEY = '25E4A61A938127'
   BASE_URL = 'https://sms.textmysms.com/app/smsapi/index.php'
-  SENDER_ID = 'TXTDMO'
+  SENDER_ID = 'BRLENT'
 
   attr_reader :message, :destination_number
 
@@ -13,7 +13,7 @@ class SmsSender
   end
 
   def send_sms
-    # return unless Rails.env.eql?('production')
+    return unless Rails.env.eql?('production')
 
     uri = URI(BASE_URL)
     params = {
