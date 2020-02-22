@@ -25,12 +25,14 @@
     <tbody>
       <% @customers.each do |customer| %>
         <tr>
-          <td><%= customer.name %></td>
+          <td><%= link_to customer.name, customer %></td>
           <td><%= customer.primary_phone_no %></td>
           <td><%= customer.secondary_phone_no %></td>
-          <td><%= link_to 'Show', customer %></td>
-          <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-          <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to edit_customer_path(customer) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
