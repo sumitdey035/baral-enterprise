@@ -9,4 +9,12 @@ module ApplicationHelper
       flash_messages << text.html_safe if message
     end.join("\n").html_safe
   end
+
+  def show_errors(object, field_name)
+    if object.errors.any?
+      if !object.errors.messages[field_name].blank?
+        object.errors.messages[field_name].join(", ")
+      end
+    end
+  end
 end

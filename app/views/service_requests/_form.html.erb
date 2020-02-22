@@ -1,16 +1,4 @@
 <%= form_with(model: [@customer, service_request], local: true) do |form| %>
-  <% if service_request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(service_request.errors.count, "error") %> prohibited this service_request from being saved:</h2>
-
-      <ul>
-        <% service_request.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -40,17 +28,19 @@
       <div class="form-group">
         <%= form.label :problem %>
         <%= form.text_area :problem, class: 'form-control', required: true %>
+        <p class='error'><%= show_errors(service_request, :problem) %></p>
       </div>
 
       <div class="form-group">
         <%= form.label :customer_remark %>
         <%= form.text_area :customer_remark, class: 'form-control' %>
+        <p class='error'><%= show_errors(service_request, :customer_remark) %></p>
       </div>
     </div>
 
     <div class="col-md-6">
       <%= form.fields_for :product_detail, service_request.product_detail do |f| %>
-        <%= render partial: 'product_details/fields', locals: { f: f } %>
+        <%= render partial: 'product_details/fields', locals: { f: f, product_detail: service_request.product_detail } %>
       <% end %>
     </div>
   </div>

@@ -1,26 +1,16 @@
 <%= form_with(model: [@customer, address], local: true) do |form| %>
-  <% if address.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
-
-      <ul>
-        <% address.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="row">
     <div class="col-7">
       <div class="form-group">
         <%= form.label :street %>
         <%= form.text_area :street, class: 'form-control', required: true %>
+        <p class='error'><%= show_errors(address, :street) %></p>
       </div>
 
       <div class="form-group">
         <%= form.label :landmark %>
         <%= form.text_area :landmark, class: 'form-control' %>
+        <p class='error'><%= show_errors(address, :landmark) %></p>
       </div>
     </div>
 
@@ -28,11 +18,13 @@
       <div class="form-group">
         <%= form.label :location %>
         <%= form.text_field :location, class: 'form-control', required: true %>
+        <p class='error'><%= show_errors(address, :location) %></p>
       </div>
 
       <div class="form-group">
         <%= form.label :pincode %>
         <%= form.text_field :pincode, class: 'form-control', required: true %>
+        <p class='error'><%= show_errors(address, :pincode) %></p>
       </div>
     </div>
   </div>
