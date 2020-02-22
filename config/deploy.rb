@@ -5,7 +5,10 @@ lock '~> 3.12.0'
 server '13.127.91.212', port: 22, roles: %i[web app db], primary: true
 
 set :application, 'baral-enterprise'
-set :repo_url, 'git@github.com:sumitdey035/baral-enterprise.git'
+set :repo_url, 'hhttps://github.com/sumitdey035/baral-enterprise.git'
+set :git_https_username, 'sumit.dey.035@gmail.com'
+set :git_https_password, 'Luvalomistu035'
+# set :repo_url, 'git@github.com:sumitdey035/baral-enterprise.git'
 set :user, 'ubuntu' #server user
 set :rbenv_ruby, '2.5.3'
 
