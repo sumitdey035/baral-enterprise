@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="mt-4"><%= @customer.name %></h1>
 
 <div class="row">
@@ -7,7 +5,7 @@
     <div class="card mb-4">
       <div class="card-header"><i class="fas fa-table mr-1"></i>
         Service Requests
-        <%= link_to 'New Service Request', new_customer_service_request_path(@customer) %>
+        <%= link_to 'New Service Request', new_customer_service_request_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -34,7 +32,9 @@
     <div class="card mb-4">
       <div class="card-header"><i class="fas fa-table mr-1"></i>
         Profile
-        <%= link_to 'Edit', edit_customer_path(@customer) %>
+        <%= link_to edit_customer_path(@customer), class: "btn float-right btn-sm" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
       </div>
       <div class="card-body">
         <p>
@@ -57,25 +57,10 @@
     <div class="card mb-4">
       <div class="card-header"><i class="fas fa-table mr-1"></i>
         Addresses
-        <%= link_to 'New Address', new_customer_address_path(@customer) %>
+        <%= link_to 'New Address', new_customer_address_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-            <tr>
-              <th>Street</th>
-              <th>Location</th>
-              <th>Landmark</th>
-              <th>Pincode</th>
-              <th colspan="3"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <%= render @customer.addresses %>
-            </tbody>
-          </table>
-        </div>
+          <%= render @customer.addresses %>
       </div>
     </div>
   </div>

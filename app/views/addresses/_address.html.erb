@@ -1,7 +1,12 @@
-<tr>
-  <td><%= address.street %></td>
-  <td><%= address.location %></td>
-  <td><%= address.landmark %></td>
-  <td><%= address.pincode %></td>
-  <td><%= link_to 'Edit', edit_customer_address_path(address.customer, address) %></td>
-</tr>
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= address.location %> -  <%= address.pincode %>
+      <%= link_to edit_customer_address_path(address.customer, address), class: "btn float-right btn-sm" do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </h5>
+    <small class="text-muted"><%= address.landmark %></small>
+    <p class="card-text"><%= address.street %></p>
+  </div>
+</div>
