@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_104217) do
+ActiveRecord::Schema.define(version: 2020_02_22_070559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2020_02_19_104217) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "product_details", force: :cascade do |t|
+    t.bigint "service_request_id"
+    t.string "category"
+    t.string "sub_category"
+    t.integer "quantity"
+    t.string "purchased_from"
+    t.string "bill_no"
+    t.date "bill_date"
+    t.boolean "warranty"
+    t.string "modelcode"
+    t.string "modelname"
+    t.string "serial_no"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_request_id"], name: "index_product_details_on_service_request_id"
+  end
+
   create_table "service_requests", force: :cascade do |t|
     t.bigint "customer_id"
     t.bigint "address_id"
@@ -47,4 +64,5 @@ ActiveRecord::Schema.define(version: 2020_02_19_104217) do
     t.index ["customer_id"], name: "index_service_requests_on_customer_id"
   end
 
+  add_foreign_key "product_details", "service_requests"
 end

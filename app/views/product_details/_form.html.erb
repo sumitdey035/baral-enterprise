@@ -1,0 +1,67 @@
+<%= form_with(model: product_detail, local: true) do |form| %>
+  <% if product_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product_detail.errors.count, "error") %> prohibited this product_detail from being saved:</h2>
+
+      <ul>
+        <% product_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_category %>
+    <%= form.text_field :sub_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purchased_from %>
+    <%= form.text_field :purchased_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bill_no %>
+    <%= form.text_field :bill_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bill_date %>
+    <%= form.date_select :bill_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :warranty %>
+    <%= form.check_box :warranty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modelcode %>
+    <%= form.text_field :modelcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modelname %>
+    <%= form.text_field :modelname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_no %>
+    <%= form.text_field :serial_no %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -5,6 +5,8 @@ class ServiceRequest < ApplicationRecord
 
   belongs_to :customer
   belongs_to :address
+  has_one :product_detail, dependent: :destroy
+  accepts_nested_attributes_for :product_detail
 
   before_validation :generate_call_id, on: :create
 

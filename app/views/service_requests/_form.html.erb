@@ -50,6 +50,58 @@
     </div>
   </div>
 
+  <%= form.fields_for :product_detail, service_request.product_detail do |f| %>
+    <div class="field">
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+    </div>
+
+    <div class="field">
+      <%= f.label :sub_category %>
+      <%= f.text_field :sub_category %>
+    </div>
+
+    <div class="field">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity %>
+    </div>
+
+    <div class="field">
+      <%= f.label :purchased_from %>
+      <%= f.text_field :purchased_from %>
+    </div>
+
+    <div class="field">
+      <%= f.label :bill_no %>
+      <%= f.text_field :bill_no %>
+    </div>
+
+    <div class="field">
+      <%= f.label :bill_date %>
+      <%= f.date_select :bill_date %>
+    </div>
+
+    <div class="field">
+      <%= f.label :warranty %>
+      <%= f.check_box :warranty %>
+    </div>
+
+    <div class="field">
+      <%= f.label :modelcode %>
+      <%= f.text_field :modelcode %>
+    </div>
+
+    <div class="field">
+      <%= f.label :modelname %>
+      <%= f.text_field :modelname %>
+    </div>
+
+    <div class="field">
+      <%= f.label :serial_no %>
+      <%= f.text_field :serial_no %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= link_to 'Back', @service_request.customer, class: 'btn btn-light' %>
     <%= form.submit class: 'btn btn-primary' %>

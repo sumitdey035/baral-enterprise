@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product_detail.category %>
+</p>
+
+<p>
+  <strong>Sub category:</strong>
+  <%= @product_detail.sub_category %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @product_detail.quantity %>
+</p>
+
+<p>
+  <strong>Purchased from:</strong>
+  <%= @product_detail.purchased_from %>
+</p>
+
+<p>
+  <strong>Bill no:</strong>
+  <%= @product_detail.bill_no %>
+</p>
+
+<p>
+  <strong>Bill date:</strong>
+  <%= @product_detail.bill_date %>
+</p>
+
+<p>
+  <strong>Warranty:</strong>
+  <%= @product_detail.warranty %>
+</p>
+
+<p>
+  <strong>Model code:</strong>
+  <%= @product_detail.model_code %>
+</p>
+
+<p>
+  <strong>Model name:</strong>
+  <%= @product_detail.model_name %>
+</p>
+
+<p>
+  <strong>Serial no:</strong>
+  <%= @product_detail.serial_no %>
+</p>
+
+<%= link_to 'Edit', edit_product_detail_path(@product_detail) %> |
+<%= link_to 'Back', product_details_path %>

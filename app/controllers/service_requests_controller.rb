@@ -10,9 +10,12 @@ class ServiceRequestsController < ApplicationController
 
   def new
     @service_request = @customer.service_requests.new
+    @service_request.build_product_detail
   end
 
-  def edit; end
+  def edit
+    @service_request.build_product_detail unless @service_request.product_detail
+  end
 
   def create
     @service_request = @customer.service_requests.new(service_request_params)
@@ -42,6 +45,8 @@ class ServiceRequestsController < ApplicationController
   end
 
   def service_request_params
-    params.require(:service_request).permit(:address_id, :problem, :status, :customer_remark)
+    params.require(:service_request).permit(:address_id, :problem, :status, :customer_remark,
+                                            product_detail_attributes: [:category, :sub_category, :quantity, :purchased_from, :bill_no,
+                                                             :bill_date, :warranty, :modelcode, :modelname, :serial_no])
   end
 end
