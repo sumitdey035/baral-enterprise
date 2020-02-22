@@ -13,7 +13,7 @@ class SmsSender
   end
 
   def send_sms
-    return unless Rails.env.eql?('production')
+    # return unless Rails.env.eql?('production')
 
     uri = URI(BASE_URL)
     params = {
