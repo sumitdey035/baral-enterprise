@@ -8,12 +8,12 @@ import './src/application.scss'
 import $ from 'jquery';
 
 require("@rails/ujs").start()
+global.$ = jQuery;
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("packs/scripts")
 global.toastr = require("toastr")
-global.$ = jQuery;
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
