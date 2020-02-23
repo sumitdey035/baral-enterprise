@@ -22,7 +22,7 @@ class ServiceRequestsController < ApplicationController
   def create
     @service_request = @customer.service_requests.new(service_request_params)
     if @service_request.save
-      redirect_to @service_request.customer, notice: 'Service request was successfully created.'
+      redirect_to @service_request, notice: 'Service request was successfully created.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ServiceRequestsController < ApplicationController
 
   def update
     if @service_request.update(service_request_params)
-      redirect_to @service_request.customer, notice: 'Service request was successfully updated.'
+      redirect_to @service_request, notice: 'Service request was successfully updated.'
     else
       render :edit
     end
