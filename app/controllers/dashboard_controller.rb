@@ -5,8 +5,7 @@ class DashboardController < ApplicationController
     @filterrific = initialize_filterrific(
       ServiceRequest,
       params[:filterrific],
-      select_options: { with_status: ServiceRequest.options_for_status },
-      available_filters: [:with_status]
+      select_options: { with_status: ServiceRequest.options_for_status }
     ) || return
     @service_requests = @filterrific.find.page(params[:page])
     respond_to do |format|
