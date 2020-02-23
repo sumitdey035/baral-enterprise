@@ -21,6 +21,7 @@
           <div class="container-fluid">
             <%= yield %>
             <%= toastr_flash %>
+            <%= render 'dashboard/sms-modal' %>
           </div>
         </main>
         <%= render 'shared/footer' %>
