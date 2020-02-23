@@ -1,24 +1,93 @@
-<p id="notice"><%= notice %></p>
+<h1 class="mt-4">
+  <span><%= @service_request.call_id %></span>
+  <span class="float-right">
+    <%= link_to edit_customer_service_request_path(@customer, @service_request), class: 'btn btn-primary' do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
+  </span>
+</h1>
 
-<p>
-  <strong>Call:</strong>
-  <%= @service_request.call_id %>
-</p>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item"><%= link_to 'Customers', customers_path %></li>
+  <li class="breadcrumb-item"><%= link_to @customer.name, customer_path(@customer) %></li>
+  <li class="breadcrumb-item">Service Requests</li>
+  <li class="breadcrumb-item active"><%= @service_request.call_id %></li>
+</ol>
 
-<p>
-  <strong>Problem:</strong>
-  <%= @service_request.problem %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Address</h3>
+    <%= render @service_request.address %>
+  </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @service_request.status %>
-</p>
+  <div class="col-md-4">
+    <p>
+      <strong>Problem:</strong>
+      <%= @service_request.problem %>
+    </p>
 
-<p>
-  <strong>Customer remark:</strong>
-  <%= @service_request.customer_remark %>
-</p>
+    <p>
+      <strong>Status:</strong>
+      <%= @service_request.decorate.status %>
+    </p>
 
-<%= link_to 'Edit', edit_customer_service_request_path(@customer, @service_request) %> |
-<%= link_to 'Back', :back %>
+    <p>
+      <strong>Customer remark:</strong>
+      <%= @service_request.customer_remark %>
+    </p>
+  </div>
+
+  <% if @service_request.product_detail %>
+    <div class="col-md-4">
+      <p>
+        <strong>category:</strong>
+        <%= @service_request.product_detail.category %>
+      </p>
+
+      <p>
+        <strong>sub_category:</strong>
+        <%= @service_request.product_detail.sub_category %>
+      </p>
+
+      <p>
+        <strong>quantity:</strong>
+        <%= @service_request.product_detail.quantity %>
+      </p>
+
+      <p>
+        <strong>purchased_from:</strong>
+        <%= @service_request.product_detail.purchased_from %>
+      </p>
+
+      <p>
+        <strong>bill_no:</strong>
+        <%= @service_request.product_detail.bill_no %>
+      </p>
+
+      <p>
+        <strong>bill_date:</strong>
+        <%= @service_request.product_detail.bill_date %>
+      </p>
+
+      <p>
+        <strong>warranty:</strong>
+        <%= @service_request.product_detail.warranty %>
+      </p>
+
+      <p>
+        <strong>modelcode:</strong>
+        <%= @service_request.product_detail.modelcode %>
+      </p>
+
+      <p>
+        <strong>modelname:</strong>
+        <%= @service_request.product_detail.modelname %>
+      </p>
+
+      <p>
+        <strong>serial_no:</strong>
+        <%= @service_request.product_detail.serial_no %>
+      </p>
+    </div>
+  <% end %>
+</div>

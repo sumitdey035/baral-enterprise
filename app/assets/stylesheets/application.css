@@ -15,3 +15,9 @@
  */
 
 p.error{ color: red; }
+
+form label.required:after
+{
+    color: red;
+    content: " *";
+}

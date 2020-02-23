@@ -1,3 +1,11 @@
-<h1>Editing Service Request</h1>
+<h1 class='mt-4'>Editing Service Request</h1>
+
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item"><%= link_to 'Customers', customers_path %></li>
+  <li class="breadcrumb-item"><%= link_to @customer.name, customer_path(@customer) %></li>
+  <li class="breadcrumb-item">Service Requests</li>
+  <li class="breadcrumb-item"><%= @service_request.call_id %></li>
+  <li class="breadcrumb-item active">Edit</li>
+</ol>
 
 <%= render 'form', service_request: @service_request %>

@@ -20,6 +20,6 @@ module BaralApp
     # the framework and any gems in your application.
     config.time_zone = 'Kolkata'
 
-    config.autoload_paths += %W[#{config.root}/app/services]
+    config.autoload_paths += %W[#{config.root}/app/services #{config.root}/app/decorators]
   end
 end

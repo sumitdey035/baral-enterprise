@@ -1,12 +1,12 @@
 <%= form_with(model: customer, local: true) do |form| %>
   <div class="form-group">
-    <%= form.label :name %>
+    <%= form.label :name, class: 'required' %>
     <%= form.text_field :name, class: 'form-control', required: true %>
     <p class='error'><%= show_errors(customer, :name) %></p>
   </div>
 
   <div class="form-group">
-    <%= form.label :primary_phone_no %>
+    <%= form.label :primary_phone_no, class: 'required' %>
     <%= form.text_field :primary_phone_no, class: 'form-control', required: true %>
     <p class='error'><%= show_errors(customer, :primary_phone_no) %></p>
   </div>

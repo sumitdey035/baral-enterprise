@@ -2,7 +2,7 @@
   <td><%= link_to service_request.call_id, customer_service_request_path(service_request.customer, service_request) %></td>
   <td><%= link_to service_request.customer.name, service_request.customer %></td>
   <td><%= service_request.problem %></td>
-  <td><%= service_request.status %></td>
+  <td><%= service_request.decorate.status %></td>
   <td><%= service_request.customer_remark %></td>
   <td>
     <%= link_to edit_customer_service_request_path(service_request.customer, service_request) do %>
