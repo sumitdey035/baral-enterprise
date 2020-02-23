@@ -17,6 +17,7 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
+gem 'goldiloader'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
