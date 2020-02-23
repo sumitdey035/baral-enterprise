@@ -4,7 +4,7 @@ class ServiceRequest < ApplicationRecord
   self.per_page = 10
   filterrific(
     default_filter_params: {},
-    available_filters: [ :search_query, :with_status ]
+    available_filters: %i[search_query with_status]
   )
 
   CUSTOMER_CARE_NO = '9733613999'
@@ -31,7 +31,7 @@ class ServiceRequest < ApplicationRecord
   end
 
   def self.options_for_status
-    statuses.map {|k, v| [k.humanize.capitalize, k]}
+    statuses.map { |k, _v| [k.humanize.capitalize, k] }
   end
 
   private

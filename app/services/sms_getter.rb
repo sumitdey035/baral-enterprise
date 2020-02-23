@@ -7,6 +7,6 @@ class SmsGetter
   def get_sms_balance
     uri = URI("#{BASE_URL}/#{API_KEY}/getBalance/true/")
     res = Net::HTTP.get_response(uri)
-    return res.body
+    res.body
   end
 end

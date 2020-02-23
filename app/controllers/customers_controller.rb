@@ -4,15 +4,15 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: %i[show edit update]
 
   def index
-    @filterrific = initialize_filterrific(Customer, params[:filterrific]) or return
+    (@filterrific = initialize_filterrific(Customer, params[:filterrific])) || return
     @customers = @filterrific.find.page(params[:page])
     respond_to do |format|
       format.html
       format.js
     end
   rescue ActiveRecord::RecordNotFound => e
-    puts "Had to reset filterrific params: #{ e.message }"
-    redirect_to(reset_filterrific_url(format: :html)) and return
+    puts "Had to reset filterrific params: #{e.message}"
+    redirect_to(reset_filterrific_url(format: :html)) && return
   end
 
   def show; end

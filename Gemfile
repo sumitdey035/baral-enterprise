@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
+gem 'draper'
+gem 'filterrific'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'puma', '~> 4.1'
@@ -12,9 +15,6 @@ gem 'rails', '~> 6.0.1'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
-gem 'devise'
-gem 'draper'
-gem 'filterrific'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
 
