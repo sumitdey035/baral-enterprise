@@ -4,7 +4,11 @@
       <div class="input-group-prepend">
         <div class="input-group-text"><i class="fas fa-search"></i></div>
       </div>
-      <%= f.text_field :search_query, class: 'filterrific-periodically-observed form-control', placeholder: 'Mobile no or Name' %>
+      <%= f.text_field :search_query, class: 'filterrific-periodically-observed form-control', placeholder: 'Request ID/Mobile/Name' %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= f.select :with_status, @filterrific.select_options[:with_status], { include_blank: '- Any Status -' }, class: 'form-control' %>
     </div>
 
     <%= link_to 'Reset filters', reset_filterrific_url, class: 'btn btn-light mb-2' %>

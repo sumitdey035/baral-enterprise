@@ -3,10 +3,7 @@
 class Customer < ApplicationRecord
   filterrific(
     default_filter_params: {},
-    available_filters: [
-      :search_query,
-      :with_primary_phone_no
-    ]
+    available_filters: [ :search_query]
   )
 
   validates :name, :primary_phone_no, presence: true

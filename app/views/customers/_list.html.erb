@@ -4,6 +4,11 @@
       No record found
     </div>
   <% else %>
+    <div class="pagination-sm">
+      <span><%= page_entries_info customers %></span>
+      <span class="float-right"><%= will_paginate customers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %></span>
+    </div>
+
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
