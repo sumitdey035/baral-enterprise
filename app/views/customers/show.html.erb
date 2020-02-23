@@ -1,74 +1,56 @@
-<h1 class="mt-4"><%= @customer.name %></h1>
+<h1 class="mt-4">
+  <i class="fas fa-user mr-1"></i>
+  <%= @customer.name %>
+</h1>
 
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item"><%= link_to 'Customers', customers_path %></li>
   <li class="breadcrumb-item active"><%= @customer.name %></li>
 </ol>
 
+
 <div class="row">
-  <div class="col-7">
-    <div class="card mb-4">
-      <div class="card-header"><i class="fas fa-table mr-1"></i>
-        Service Requests
-        <%= link_to 'New Service Request', new_customer_service_request_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-            <tr>
-              <th>Call</th>
-              <th>Customer</th>
-              <th>Problem</th>
-              <th>Status</th>
-              <th>Customer remark</th>
-              <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-              <%= render @customer.service_requests %>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="col-md-3">
+    <%= render 'profile' %>
   </div>
-
-  <div class="col-5">
+  <div class="col-md-9">
     <div class="card mb-4">
-      <div class="card-header"><i class="fas fa-table mr-1"></i>
-        Profile
-        <%= link_to edit_customer_path(@customer), class: "btn float-right btn-sm" do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-      </div>
-      <div class="card-body">
-        <p>
-          <strong>Name:</strong>
-          <%= @customer.name %>
-        </p>
-
-        <p>
-          <strong>Primary phone no:</strong>
-          <%= @customer.primary_phone_no %>
-        </p>
-
-        <p>
-          <strong>Secondary phone no:</strong>
-          <%= @customer.secondary_phone_no %>
-        </p>
-      </div>
-    </div>
-
-    <div class="card mb-4">
-      <div class="card-header"><i class="fas fa-table mr-1"></i>
+      <div class="card-header"><i class="fas fa-address-card mr-1"></i>
         Addresses
         <%= link_to 'New Address', new_customer_address_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
       </div>
       <div class="card-body">
+        <div class="card-group">
           <%= render @customer.addresses %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="card mb-4">
+  <div class="card-header">
+    <i class="fas fa-headset mr-1"></i>
+    Service Requests
+    <%= link_to 'New Service Request', new_customer_service_request_path(@customer), class: 'btn btn-primary float-right btn-sm' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+          <th>Call</th>
+          <th>Customer</th>
+          <th>Problem</th>
+          <th>Status</th>
+          <th>Customer remark</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render @customer.service_requests %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
